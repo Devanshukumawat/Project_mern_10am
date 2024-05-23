@@ -10,6 +10,7 @@ router.post("/insertproduct",adminC.productinsertController)
 router.get("/productdata",adminC.productDataController)
 router.get("/updateformdata/:productid",adminC.updateFormController)
 router.put("/updateproductdata/:id",adminC.updateProductController)
+router.delete("/adminproductdelete/:id",adminC.deleteProductController)
 
 
 

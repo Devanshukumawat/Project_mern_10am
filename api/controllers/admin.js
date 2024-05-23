@@ -10,7 +10,7 @@ exports.productinsertController = async(req,res)=>{
     ProductDesc:Pdesc,
     })
 
-    if(record==null){
+    if(record===null){
         await record.save()
     res.json(record)
     }else{
@@ -45,4 +45,11 @@ exports.updateProductController = async(req,res)=>{
     ProductDesc:Pdesc,
      })
      res.json(record)
+}
+
+
+exports.deleteProductController = async(req,res)=>{
+    const id = req.params.id
+    const record = await ProductCollection.findByIdAndDelete(id)
+    res.json({message:"Successfully delete"})
 }
